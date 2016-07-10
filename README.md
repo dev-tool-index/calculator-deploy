@@ -1,2 +1,2 @@
 # calculator-deploy
-Go to [wiki](/wiki) for details.
+Go to [wiki](https://github.com/dev-tool-index/calculator-deploy/wiki) for details.
