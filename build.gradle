@@ -1,0 +1,22 @@
+plugins {
+    id "de.undercouch.download" version "3.1.0"
+}
+
+import de.undercouch.gradle.tasks.download.Download
+
+def calculator_service_version = "3.2"
+def war_url = "https://jitpack.io/com/github/dev-tool-index/calculator-service/" + calculator_service_version + "/calculator-service-" + calculator_service_version + ".war"
+
+task wrapper(type: Wrapper) {
+  gradleVersion = '2.13'
+  distributionUrl = "https://services.gradle.org/distributions/gradle-$gradleVersion-all.zip"
+}
+
+task downloadFile(type: Download) {
+    src war_url
+    dest buildDir
+}
+
+task stage {
+  dependsOn downloadFile
+}
