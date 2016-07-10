@@ -4,7 +4,9 @@ plugins {
 
 import de.undercouch.gradle.tasks.download.Download
 
-def calculator_service_version = "3.2"
+apply plugin:'base'
+
+def calculator_service_version = "3.3"
 def war_url = "https://jitpack.io/com/github/dev-tool-index/calculator-service/" + calculator_service_version + "/calculator-service-" + calculator_service_version + ".war"
 
 task wrapper(type: Wrapper) {
@@ -18,5 +20,5 @@ task downloadFile(type: Download) {
 }
 
 task stage {
-  dependsOn downloadFile
+  dependsOn clean, downloadFile
 }
