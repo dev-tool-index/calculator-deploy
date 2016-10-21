@@ -16,7 +16,7 @@ task wrapper(type: Wrapper) {
 
 task downloadFile(type: Download) {
     src war_url
-    dest buildDir
+    dest new File(buildDir, 'calculator-service.war')
 }
 
 task stage {
